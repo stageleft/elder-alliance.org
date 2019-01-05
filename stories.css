@@ -21,11 +21,6 @@ h1{
 	padding-top:1%;
 	padding-bottom:1%;
 }
-h1.maria:before{
-	content: "マリア様がみてるショートストーリー "; 
-	font-size: small;
-	font-weight: normal;
-}
 h1.kanon:before{
 	content: "Kanonショートストーリー "; 
 	font-size: small;
