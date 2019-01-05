@@ -26,11 +26,6 @@ h1.maria:before{
 	font-size: small;
 	font-weight: normal;
 }
-h1.otome:before{
-	content: "処女はお姉さまに恋してるショートストーリー "; 
-	font-size: small;
-	font-weight: normal;
-}
 h1.kanon:before{
 	content: "Kanonショートストーリー "; 
 	font-size: small;
