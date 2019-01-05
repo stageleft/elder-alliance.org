@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="../document.css" type="text/css"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" type="text/css" href="../document.css" />
+ <title>RiTsutter - elder-alliance.org</title>
+</head>
+<body>
+<!--#include file="topmenu.html"-->
+<p class="note">
+ <a href="http://www.elder-alliance.org/">elder-alliance.org</a>
+ &nbsp;&gt;&nbsp;
+ RiTsutter
+</p>
+<h1 style="text-align:center">RiTsutter</h1>
+<p style="text-align:center; text-indent:0pt">
+<a onclick="window.open(this.href, '_blank'); return false;" href="http://www.twitter.com/">ついったー</a>を使っているとき、誰かのツイートに、コメントしたいと思ったことはありませんか？<br />
+誰かのツイートにコメントして自分のツイートとする「非公式リツイート（コメントつきリツイート）」を使った経験はありませんか？<br />
+そこで、こんなことを思いませんでしたか？<br />
+「長いツイートに非公式リツイートをつけたいが、文字数が足りなくて困る」<br />
+「非公式リツイートでも、Replyと同じようにクライアントで議論の経緯を追いたい」<br />
+そんな悩みを解決する。<br />
+それが、RiTsutter（りつったー）なのです。たぶん。
+</p>
+<h2>このページについて</h2>
+<p>
+このページは、
+webサイト「<a onclick="window.open(this.href, '_blank'); return false;" href="http://www.twitter.com/">ついったー</a>」についてのページです。
+</p>
+<p>
+なお、当サイトは、公序良俗から外れないような形でのサイト制作を行っておりますが、万一不具合等ありましたらご連絡ください。
+ご理解とご協力のほどをよろしくお願いいたします。
+</p>
+<h2>コンテンツ</h2>
+<ul>
+ <li><a href="#about">考え方</a></li>
+ <li><a href="#download">ダウンロード</a></li>
+ <li><a href="#install">インストール</a></li>
+ <li><a href="#manual">使用方法</a></li>
+ <li><a href="#ref">参考</a></li>
+</ul>
+<h2 id="about">RiTsutterとは</h2>
+<h3>非公式リツイートと、その問題点</h3>
+<p>
+ 非公式リツイート（コメントつきリツイート）とは、
+ 「コメント RT @引用元発言者ID 引用元発言」の形式でツイートすることにより、
+ あるツイートを引用した発言ができる書式のことをいいます。（RTはQTでも構いません）
+</p>
+<p>
+ ただし、コメントつきリツイート全体で140字の制限がかかるため、引用元発言が長い場合には、コメントの文字数がほとんどとれないことがあります。
+ また、リツイート時に元発言の改変が発生しうる、などの問題点があります。
+</p>
+<p>
+ 例）119文字を引用すると、2文字のコメントしかつけられない。
+</p>
+<p>
+（引用元発言「elderalliance」）そんな中で、次世代RTにしか存在しえない利点を発見した。In-Reply-Toを使わないくせに、Conversationの接続ができる。RepostLink時代にはなかった特徴だと思う。専用クライアント実装できれば、議論やる上で蝶便利。<b>(119文字)</b>
+</p>
+<p>
+（コメントつきリツイート「ritsutter」）うん RT @elderalliance そんな中で、次世代RTにしか存在しえない利点を発見した。In-Reply-Toを使わないくせに、Conversationの接続ができる。RepostLink時代にはなかった特徴だと思う。専用クライアント実装できれば、議論やる上で蝶便利。<b>(140文字)</b>
+</p>
+<h3>RepostLinkと、その問題点</h3>
+</p>
+ RepostLinkとは、
+ 「コメント RT @引用元発言者ID 引用元発言ステータスURL」の形式でツイートすることにより、
+ あるツイートを引用した発言ができる書式のことをいいます。（RTはQTでも構いません）
+<p>
+ ただし、一回一回URLを展開する必要がある、携帯／スマートフォンでURLをコピーペーストできるソフトが限られているなど、
+ 使いやすさに問題を抱えているため、めったに使われることがありません。
+</p>
+<p>
+ 例）119文字を引用したが、70文字近くのコメントをつけられる。
+</p>
+<p>
+（引用元発言「elderalliance」ID:12505946739）そんな中で、次世代RTにしか存在しえない利点を発見した。In-Reply-Toを使わないくせに、Conversationの接続ができる。RepostLink時代にはなかった特徴だと思う。専用クライアント実装できれば、議論やる上で蝶便利。<b>(119文字)</b>
+</p>
+<p>
+（コメントつきリツイート「ritsutter」）
+うん<b>。だから、ボクにはその機能があるんだよ。発言元ステータスはちゃんと展開するし、吹き出しをクリックすると議論が続くから、ぜひ使ってね！</b> RT @elderalliance http://twitter.com/elderalliance/status/12505946739<b>(139文字)</b>
+</p>
+<h3>RiTsutter（りつったー）とは</h3>
+<p>
+ RiTsutter（りつったー）とは、RepostLinkの問題点を解消することで、
+ コメントつきリツイートとRepostLinkの利点を両取りするためのプロジェクト、および、その成果であるクライアントソフトです。
+ すなわち、RiTsutterは、RepostLinkの形式でコメントつきリツイートを実施し、弱点をクライアントの操作性で補います。
+</p>
+<p>
+ これを、「次世代リツイート（次世代RT）」と言います。何が次世代なのかは分かりませんが。
+</p>
+<p>
+ 具体的には、「1ボタンでの引用リツイート」「発言元ステータス自動展開」をRepostLinkにて実現しようとするものです。
+</p><p>
+ なお、アイディア、ソースコードなどの再利用は積極的に行われることを望んでいます。
+ 本プロジェクトの目的はクライアントソフトの作成ではなく、次世代リツイートの流行と定着にあるためです。
+</p><h2 id="download">ダウンロード</h2>
+<ul>
+ <li><a href="ritsutter_0_3.tar.gz">RiTsutter評価版Rubyソースコード</a>(ver.0.3, 主にLinux向け)</li>
+<!--
+ <li><a href="">RiTsutter for Windows</a>(制作予定は未定)</li>
+ <li><a href="">RiTsutter for Linux</a>(制作予定は未定)</li>
+ <li><a href="">RiTsutter for iPhone</a>(制作予定は未定)</li>
+ <li><a href="">RiTsutter for Android</a>(制作予定は未定)</li>
+//-->
+</ul>
+<h2 id="install">インストール(Rubyソースコード)</h2>
+<ol>
+ <li>適切なフォルダにてファイルを展開します。（Linuxの場合、「tar zxvf ritsutter_0_1.tar.gz」コマンドで展開されます）</li>
+ <li>Ruby-GTK2(Ruby-Gtk::MozEmbedを含む)、および、RubyGems(twitter, oAuth)をインストールします。<br />
+      以下の説明はDebian linux向けのうろ覚え。WindowsやLinux他ディストリの場合は適宜読み替えてください。
+      特に、Windowsで読み替えて全部成功した方がいらしたらぜひ教えてください。
+  <ol>
+   <li>「aptitude install ruby-gnome2」として、Ruby-GTK2関連ファイルをインストールします。<br />
+       Debian Linuxだと全部入ると思いますが、Windowsだと事情はもっと複雑で、私は挫折しました。
+   </li>
+   <li>「gem install oauth」として、、RubyGemsを用いてrubygems-oAuthをインストールします。</li>
+   <li>「gem install twitter」として、、RubyGemsを用いてrubygems-twitterをインストールします。</li>
+  </ol>
+ </li>
+ <li>アカウント認証のため、ファイルを展開したフォルダで ritsutter_auth.rb を実行し、指示にしたがって操作します。
+  <ol>
+   <li>Consumer Key / Consumer Secretを入力し、「Autenticate with this ConsumerKey/ConsumerSecret」をクリックします。<br />
+（※）通常、そのままで問題ありません。投稿アプリ「RiTsutter」の表示を変更する場合のみフィールドに文字を入力します。</li>
+   <li>Consumer Key / Consumer Secretが正しいことを確認し、「Click to authorize your Consumer Key/Secret」をクリックします。</li>
+   <li>RiTsutterの中に、ついったーのwebサイトが表示されますので、IDとパスワードを入力し、「Allow(許可)」をクリックします。</li>
+   <li>表示された数字を、アプリ下部の「your PIN code」にコピペし、右下の「Send」ボタンをクリックします。</li>
+   <li>「Auth Succeeded.」のダイアログが表示されたら、「閉じる」ボタンをクリックします。アプリが終了します。</li>
+   <li>終了後、カレントフォルダ(ritsutter.rbのあるフォルダ)に"RiTsutter_Access.txt"があることを確認します。ない場合は、ritsutter_auth.rbを再度実行し、同じ手順を繰り返します。</li>
+  </ol>
+ </li>
+ <li>インストールは以上です。<br />
+     ritsutter.rbや、ritsutter_auth.rbが正しく動かないように思われる場合は、
+      インストールするモジュールのバージョンを変えてみてください。
+ </li>
+</ol>
+</p>
+<h2 id="manual">使用方法</h2>
+<p>
+ 上記インストール手順を実施した後、ファイルを展開したフォルダで ritsutter.rb を実行すればRiTsutterを利用できます。
+</p>
+<ul>
+ <li>サポート機能（太字はRiTsutter特有機能）
+  <ul>
+   <li>タイムライン表示
+    <ul>
+     <li>メイン(Homeボタン) / 差分取得</li>
+     <li>@自分のID(Mentionボタン) / 差分取得</li>
+     <li>自発言(Selfボタン) / 差分取得</li>
+     <li><b>Conversation(青と橙の吹き出しが重なるアイコン。Reply、または、次世代リツイートによる議論のリンク)</b></li>
+     <li>ハッシュタグタイムライン（発言中のハッシュタグをクリック）</li>
+    </ul>
+   </li>
+   <li>操作サポート機能
+    <ul>
+     <li>ツイート削除アイコン(青い吹き出しに橙色の×印。自発言のみ)</li>
+     <li>返信アイコン(青い矢印。すべての発言)</li>
+     <li>リツイートアイコン(橙色の矢印。他人の公開発言のみ)</li>
+     <li><b>次世代リツイート(交差する青とオレンジの矢印。すべての公開発言)</b></li>
+     <li>Tweet/Refreshボタンによる更新</li>
+     <li>お気に入り登録/解除</li>
+     <li>ツイート入力文字数表示</li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>未サポート機能（サポート予定）
+  <ul>
+   <li>表示／ツイート関連
+    <ul>
+     <li>タイムライン自動更新</li>
+     <li>タイムライン未読管理</li>
+     <li>リスト機能</li>
+     <li>検索機能（ハッシュタグを含む）</li>
+     <li>ハッシュタグ入力サポート</li>
+     <li>リツイートの取り消し</li>
+    </ul>
+   </li>
+   <li>外部サイト連携
+    <ul>
+     <li>ついったー公式（フォロー／アンフォロー他）</li>
+     <li>ふぁぼったー（ふぁぼられ確認）</li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>サポート予定なし機能
+  <ul>
+   <li>非公式リツイート(通常形式)</li>
+   <li>タイムライン振り分けによるツイート表示</li>
+  </ul>
+ </li>
+</ul>
+<h2 id="ref">主な参考</h2>
+<ul>
+ <li><a onclick="window.open(this.href, '_blank'); return false;" href="http://usy.jp/twitter/index.php?Twitter%20API">TwitterまとめWiki (Twitter API / 開発)</a></li>
+ <li><a onclick="window.open(this.href, '_blank'); return false;" href="http://d.hatena.ne.jp/shibason/20090802/1249204953">しばそんノート (TwitterのbotをOAuthに対応させる)</a></li>
+ <li><a onclick="window.open(this.href, '_blank'); return false;" href="http://blog.fkoji.com/2008/08171833.html">F.Ko-Jiの「一秒後は未来」(Twitter APIで「この発言に対するレス」が可能に)</a></li>
+ <li><a onclick="window.open(this.href, '_blank'); return false;" href="http://ruby-gnome2.sourceforge.jp/ja/">Ruby-GNOME2 Project Website</a></li>
+ <li><a onclick="window.open(this.href, '_blank'); return false;" href="http://watcher.moe-nifty.com/memo/docs/twitterAPI.txt">観測気球(Twitter API 仕様書 日本語訳 第四十九版 (2010年3月3日版))</a></li>
+</ul>
+<h2 id="history">履歴</h2>
+<ul>
+ <li>2010/04/24 公表(スタブとしてページ公開)</li>
+ <li>2010/05/05 <a href="ritsutter_0_1.tar.gz">Ver.0.1 by Ruby Scrpit</a>
+  <ul>
+   <li>新規機能
+    <ul>
+     <li>タイムライン表示（メイン／返信／自発言／Conversation）</li>
+     <li>ツイート（通常／返信／リツイート／次世代リツイート）</li>
+     <li>お気に入り登録/解除</li>
+     <li>OAuth認証</li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>2010/05/09 <a href="ritsutter_0_2.tar.gz">Ver.0.2 by Ruby Scrpit</a>
+  <ul>
+   <li>新規機能
+    <ul>
+     <li>発言削除</li>
+     <li>タイムライン差分(未来／過去)取得</li>
+     <li>Tweet/Refreshボタンによるタイムライン更新</li>
+    </ul>
+   </li>
+   <li>不具合修正/機能強化
+    <ul>
+     <li>140字を超えるツイートが入力可能な不具合（実際に送信すると異常終了する）</li>
+     <li>Tweet表示の高速化</li>
+     <li>Tweet表示内容の適正化</li>
+     <li>リツイートの表示内容変更</li>
+     <li>発言者（自分／相手）による、リツイートの可否判定およびアイコン表示</li>
+     <li>発言者（ツイート公開／非公開）による、次世代リツイートの可否判定およびアイコン表示</li>
+     <li>発言種類（通常ツイート／返信or次世代リツイート）による、Conversationリストの存在判定およびアイコン表示</li>
+     <li>Tweet/Refreshボタンによるタイムライン更新</li>
+     <li>お気に入り登録/解除時の表示が更新されない不具合を修正</li>
+     <li>特定ツイート（リンク対象文字0文字。(@_@;)の2回めの@、など）の場合に、表示処理停止するバグを修正</li>
+     <li>OAuth認証時、コンソールに変な文字列が出てくるバグの修正</li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>2010/05/13 <a href="ritsutter_0_2_1.tar.gz">Ver.0.2.1 by Ruby Scrpit</a>
+  <ul>
+   <li>不具合修正/機能強化
+    <ul>
+     <li>エラー（503エラー等）時不正終了するバグの修正</li>
+     <li>次世代RT引用元エラー（引用元発言削除済みなど）時、TL表示されないバグの修正</li>
+     <li>お気に入り登録／削除時、TL更新しないと★の色が変わらないバグの修正</li>
+     <li>リツイート発言のお気に入り登録が表示反映されないバグの修正</li>
+     <li>リツイート発言のお気に入り削除ができないバグの修正</li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>2010/05/16 <a href="ritsutter_0_3.tar.gz">Ver.0.3 by Ruby Scrpit</a>
+  <ul>
+   <li>機能強化/新機能
+    <ul>
+     <li>ハッシュタグのリンククリックでTL表示（公式サイトへのログイン不要化）</li>
+     <li>複数の発言に対するリプライ（in_reply_toステータスは、最後にリプライをクリックした発言に発生します）</li>
+     <li>ツイート入力文字数の表示</li>
+    </ul>
+   </li>
+   <li>仕様変更
+    <ul>
+     <li>リプライ/次世代リツイート時にConversationタイムラインを自動表示する仕様を削除。<br />
+          理由：複数の発言に対するリプライを実施する際に手順が増えるため。<br />
+          回避策： Quote/Replyアイコンクリック後、「Conversation」アイコンを手動クリックで同等の動作になります。
+     </li>
+    </ul>
+   </li>
+   <li>不具合修正
+    <ul>
+     <li>エラー（APIタイムアウト）時不正終了するバグの修正（0.2.1修正時のミス）</li>
+   </ul>
+   </li>
+   <li>既知の不具合
+    <ul>
+     <li>特定サイトを表示した後、TL表示に戻ると時折異常終了（Segmentation Fault）する<br />
+          回避方法：Ctrl-CによるURLコピペ -> お手持ちのブラウザでURLを表示。
+     </li>
+     <li>TL読み込みなどの動作中に操作すると、クライアントがフリーズする<br />
+          回避方法：連続クリックしない、マウスカーソルが矢印に戻らないときは操作しない。
+     </li>
+     <li>日本語入力(Anthy利用)時、ツイート入力で文字数がリアルタイム反映されない<br />
+          回避方法：文字数確認するときに、IME(Anthy)を直接入力モードにする。
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<!--#include file="footer.html"-->
+</body>
+</html>

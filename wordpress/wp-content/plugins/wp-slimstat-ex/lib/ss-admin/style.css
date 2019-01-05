@@ -1,0 +1,147 @@
+html {
+background-color: #eee;
+}
+body {
+background-color: #fff;
+color: #000;
+font-family: Georgia, "Times New Roman", Times, sans-serif;
+margin-left: 20%;
+margin-right: 20%;
+padding: .2em 2em;
+}
+h1 {
+color: #006;
+font-size: 18px;
+font-weight: lighter;
+}
+h2 {
+font-size: 16px;
+}
+p, li, dt {
+line-height: 140%;
+padding-bottom: 2px;
+}
+ul, ol {
+padding: 5px 5px 5px 20px;
+}
+#logo {
+margin-bottom: 2em;
+}
+.step a, .step input {
+font-size: 2em;
+}
+.red {
+color: red;
+}
+.bold {
+font-weight: bold;
+}
+.green {
+color: green;
+}
+.blue {
+color:blue;
+}
+td input {
+font-size: 1.5em;
+}
+.step, th {
+text-align: right;
+}
+.dot {
+font-size: 6px;
+line-height: 6px;
+margin: 0;
+padding: 0;
+color: green;
+}
+#footer {
+text-align: center;
+border-top: 1px solid #ccc;
+padding-top: 1em;
+font-style: italic;
+}
+a {
+border-bottom: 1px solid #69c;
+color: #00019b;
+text-decoration: none;
+}
+a.delete:hover {
+background-color: #c00;
+color: #fff;
+}
+a.edit, a.delete, a.edit:hover, a.delete:hover {
+border-bottom: none;
+display: block;
+padding: 5px 0;
+text-align: center;
+}
+a.edit:hover {
+background-color: #ccc;
+color: #036;
+}
+a:visited {
+color: #006;
+}
+a:hover {
+color: #069;
+}
+.alternate {
+background-color: #f1f1f1;
+}
+.active td {
+background-color: #BEB;
+}
+.active .name {
+background-color: #9C9;
+text-decoration: underline;
+}
+.alternate.active td {
+background-color: #ADA;
+}
+.alternate.active .name {
+background-color: #8B8;
+}
+.widefat {
+width: 100%;
+}
+.widefat td, .widefat th {
+padding: 5px 6px;
+}
+th {
+background-color: #e0e0e0;
+}
+.message {
+border: 1px solid #ddd;
+font-weight:bold;
+text-align:center;
+padding:4px 12px;
+background-color:#FFFFCA;
+}
+.submit input, .submit input:focus, .button, .button:focus {
+background: url( fade-butt.png );
+border: 3px double #999;
+border-left-color: #ccc;
+border-top-color: #ccc;
+color: #333;
+padding: 0.25em;
+}
+.submit input:active, .button:active {
+background: #f4f4f4;
+border: 3px double #ccc;
+border-left-color: #999;
+border-top-color: #999;
+}
+.submit {
+margin-left: 14px;
+/*text-align: right;*/
+}
+
+div.substep {
+background-image: url('yani.gif');
+background-repeat: repeat;
+}
+
+div.substep-alt {
+background-color: #efefef;
+}

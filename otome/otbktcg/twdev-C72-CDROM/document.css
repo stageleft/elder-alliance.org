@@ -1,0 +1,124 @@
+body{
+	bgcolor: white;
+	text: black;
+	link: blue;
+	vlink: navy;
+	alink: aqua;
+	margin-left: 10%;
+	width: 80%;
+}
+h1{
+	border: teal 3.0pt solid; 
+	padding-left:1%;
+	padding-right:1%;
+	padding-top:1%;
+	padding-bottom:1%;
+}
+h2{
+	font-size: large;
+	font-weight: bold;
+	padding-left: 1em;
+	border-bottom: teal 1pt solid; 
+	border-left: teal 1.0em solid;
+}
+h3{
+	font-size: medium;
+	padding: 1pt 1pt 1pt 1pt;
+	border-bottom-color: teal;
+	border-bottom-width: 1pt;
+	border-bottom-style: solid;
+}
+h3:before{
+	content: "# ";
+	color: teal;
+}
+h4{
+	font-weight: bold;
+}
+p{
+	text-indent: 1em;
+}
+p.authority{
+	text-align: right
+}
+p.header{
+	border-top-color: black;
+	border-top-width: 1.0em;
+}
+p.footer{
+	border-top: gray 5pt double;
+	text-align:center;
+}
+p.note{
+	border-top: gray 5pt double;
+	border-bottom: gray 5pt double;
+	padding-top:1%;
+	padding-bottom:1%;
+}
+strong{
+	font-weight: bold;
+	font-style: italic;
+	color: red;
+}
+em{
+	font-style: italic;
+	color: red;
+}
+a.title:before{
+	content: "「"
+}
+a.title{
+	font-style: normal;
+}
+a.title:after{
+	content: "」"
+}
+/* logical usage : iタグはリンク先コンテンツ作成日などの注釈に用いる */
+i:before{
+	content: "（";
+}
+i{
+	font-size:small;
+}
+i:after{
+	content: "）";
+}
+li{
+	padding: 2pt;
+}
+span{
+	font-size:small;
+}
+span.hidden{
+	color:White
+}
+
+
+/* rubyタグ(ひらひらのひらがなめがね　より) */
+ruby {
+  display:inline-table;
+  text-align:center;
+  white-space:nowrap;
+  text-indent:0;
+  margin:0;
+  vertical-align:-20%;
+}
+
+/* ルビベース */
+ruby>rb,ruby>rbc {
+  display:table-row-group;
+  line-height:120%;
+}
+
+/* 前側ルビテキスト */
+ruby>rt,ruby>rbc+rtc {
+  display:table-header-group;
+  font-size:70%;
+  line-height:40%;
+  letter-spacing:0;
+}
+
+/* ルビ括弧 */
+rp {
+  display:none;
+}

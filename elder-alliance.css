@@ -1,0 +1,42 @@
+body{bgcolor:White
+	text:Black
+	link:Blue
+	vlink:Navy
+	alink:Aqua}
+h1{text-align:center;color:blue}
+h2{text-align:center;font-size:large;font-weight:bold}
+h4{text-align:center;font-weight:bold}
+p{font-size:medium;text-align:center}
+span{font-size:small}
+span.hidden{color:White}
+p.caution{text-align:right;font-size:xx-small}
+p.footnote{text-align:left;font-size:x-small}
+
+/* rubyタグ(ひらひらのひらがなめがね　より) */
+ruby {
+  display:inline-table;
+  text-align:center;
+  white-space:nowrap;
+  text-indent:0;
+  margin:0;
+  vertical-align:-20%;
+}
+
+/* ルビベース */
+ruby>rb,ruby>rbc {
+  display:table-row-group;
+  line-height:120%;
+}
+
+/* 前側ルビテキスト */
+ruby>rt,ruby>rbc+rtc {
+  display:table-header-group;
+  font-size:70%;
+  line-height:40%;
+  letter-spacing:0;
+}
+
+/* ルビ括弧 */
+rp {
+  display:none;
+}

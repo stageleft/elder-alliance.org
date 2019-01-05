@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="../document.css" type="text/css"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" type="text/css" href="../document.css" />
+ <title>LEDライトシミュレータ - elder-alliance.org</title>
+<script type="text/javascript">
+<!--
+  var mem_red   = '00';
+  var mem_green = '00';
+  var mem_blue  = '00';
+  var cur_red   = '00';
+  var cur_green = '00';
+  var cur_blue  = '00';
+  var min_red   = 0;
+  var min_green = 0;
+  var min_blue  = 0;
+  var max_red   = 0;
+  var max_green = 0;
+  var max_blue  = 0;
+  var int_time  = 1000 / 16;
+  var int_count = 0x100 / 16;
+  var rnd_time  = 0;
+  to_ret = window.setTimeout(updateLuminous, int_time);
+
+  function setCurLuminous(red, green, blue)
+  {
+    cur_red   = red;
+    cur_green = green;
+    cur_blue  = blue;
+
+    document.color.current.value = '#' + cur_red + cur_green + cur_blue; 
+  }
+  function setMemLuminous()
+  {
+    mem_red   = cur_red;
+    mem_green = cur_green;
+    mem_blue  = cur_blue;
+
+    document.color.memory.value = '#' + mem_red + mem_green + mem_blue; 
+  }
+
+  function rgb2color(red, green, blue)
+  {
+    luminous_string = '#';
+    if (red < 0x10)
+    {
+      luminous_string = luminous_string + '0' + red.toString(16); 
+    }
+    else
+    {
+      luminous_string = luminous_string + red.toString(16); 
+    }
+    if (green < 0x10)
+    {
+      luminous_string = luminous_string + '0' + green.toString(16); 
+    }
+    else
+    {
+      luminous_string = luminous_string + green.toString(16); 
+    }
+    if (blue < 0x10)
+    {
+      luminous_string = luminous_string + '0' + blue.toString(16); 
+    }
+    else
+    {
+      luminous_string = luminous_string + blue.toString(16); 
+    }
+    return luminous_string;
+  }
+
+  function updateLuminous_type1(time)
+  {
+    luminous_string = '';
+    rgb_turn = Math.floor(time / 0x800);
+    if(rgb_turn == 0)
+    {
+      red_speed   = 0x100;
+      green_speed = 0x200;
+      blue_speed  = 0x400;
+    }
+    else if(rgb_turn == 1)
+    {
+      red_speed   = 0x400;
+      green_speed = 0x100;
+      blue_speed  = 0x200;
+    }
+    else if(rgb_turn == 2)
+    {
+      red_speed   = 0x200;
+      green_speed = 0x400;
+      blue_speed  = 0x100;
+    }
+    if (time % (red_speed * 2) < red_speed)
+    {
+      red_light   = time % red_speed;
+    }
+    else
+    {
+      red_light   = red_speed - (time % red_speed);
+    }
+    if (time % (green_speed * 2) < green_speed)
+    {
+      green_light   = time % green_speed;
+    }
+    else
+    {
+      green_light   = green_speed - (time % green_speed);
+    }
+    if (time % (blue_speed * 2) < blue_speed)
+    {
+      blue_light   = time % blue_speed;
+    }
+    else
+    {
+      blue_light   = blue_speed - (time % blue_speed);
+    }
+
+    rnd_red   = Math.floor(((red_light)   * parseInt(mem_red,   16) + (red_speed   - red_light)   * parseInt(cur_red,   16)) / red_speed);
+    rnd_green = Math.floor(((green_light) * parseInt(mem_green, 16) + (green_speed - green_light) * parseInt(cur_green, 16)) / green_speed);
+    rnd_blue  = Math.floor(((blue_light)  * parseInt(mem_blue,  16) + (blue_speed  - blue_light)  * parseInt(cur_blue,  16)) / blue_speed);
+
+    luminous_string = rgb2color(rnd_red, rnd_green, rnd_blue);
+    return luminous_string;
+  }
+
+  function updateLuminous_type2(time)
+  {
+    luminous_string = '';
+    chg_speed = 0x100;
+    if((time % (chg_speed * 2)) < chg_speed)
+    {
+      luminous_string = '#' + cur_red + cur_green + cur_blue; 
+    }
+    else
+    {
+      luminous_string = '#' + mem_red + mem_green + mem_blue; 
+    }
+    return luminous_string;
+  }
+
+  function updateLuminous_type3(time)
+  {
+    luminous_string = '';
+    chg_speed = 0x200;
+    base_time = time % (chg_speed * 4);
+    if(base_time < chg_speed)
+    {
+      luminous_string = '#' + cur_red + cur_green + cur_blue; 
+    }
+    else if(base_time < (chg_speed * 2))
+    {
+      light = base_time - chg_speed;
+      red   = Math.floor(((light) * parseInt(mem_red,   16) + (chg_speed - light) * parseInt(cur_red,   16)) / chg_speed);
+      green = Math.floor(((light) * parseInt(mem_green, 16) + (chg_speed - light) * parseInt(cur_green, 16)) / chg_speed);
+      blue  = Math.floor(((light) * parseInt(mem_blue,  16) + (chg_speed - light) * parseInt(cur_blue,  16)) / chg_speed);
+      luminous_string = rgb2color(red, green, blue);
+    }
+    else if(base_time < (chg_speed * 3))
+    {
+      luminous_string = '#' + mem_red + mem_green + mem_blue; 
+    }
+    else
+    {
+      light = chg_speed - (base_time % chg_speed);
+      red   = Math.floor(((light) * parseInt(mem_red,   16) + (chg_speed - light) * parseInt(cur_red,   16)) / chg_speed);
+      green = Math.floor(((light) * parseInt(mem_green, 16) + (chg_speed - light) * parseInt(cur_green, 16)) / chg_speed);
+      blue  = Math.floor(((light) * parseInt(mem_blue,  16) + (chg_speed - light) * parseInt(cur_blue,  16)) / chg_speed);
+      luminous_string = rgb2color(red, green, blue);
+    }
+    return luminous_string;
+  }
+
+  function updateLuminous()
+  {
+    rnd_time = rnd_time + int_count;
+    if (rnd_time >= 0x1800)
+    {
+      rnd_time = rnd_time - 0x1800;
+    }
+
+    luminous1_string = updateLuminous_type1(rnd_time);
+    document.getElementById('Luminous_box_1').style.backgroundColor = luminous1_string;
+    document.luminous1.luminous1.value = luminous1_string;
+
+    luminous2_string = updateLuminous_type2(rnd_time);
+    document.getElementById('Luminous_box_2').style.backgroundColor = luminous2_string; 
+    document.luminous2.luminous2.value = luminous2_string; 
+
+    luminous3_string = updateLuminous_type3(rnd_time);
+    document.getElementById('Luminous_box_3').style.backgroundColor = luminous3_string; 
+    document.luminous3.luminous3.value = luminous3_string; 
+
+    to_ret = window.setTimeout(updateLuminous, int_time);
+  }
+-->
+</script>
+</head>
+<body>
+<!--#include file="topmenu.html"-->
+<p class="note">
+ <a href="http://www.elder-alliance.org/">elder-alliance.org</a>
+ &nbsp;&gt;&nbsp;
+ LEDライトシミュレータ
+</p>
+<h1>自作LEDライト カラーシミュレータ（アイマスライブ用）</h1>
+<h4>つかいかた</h4>
+<p>
+ 色設定のセルをクリックし、色を選ぶ。
+</p>
+<p>
+ Updateボタンを押すと、選んだ色に固定する（色を覚える）。
+</p>
+<p>
+ Updateボタンを押さないままの場合、選んだ色と覚えた色を交互に表示する。
+</p>
+<h4>シミュレーション</h4>
+<table>
+ <thead>
+  <tr><td colspan=2>Random Color</td><td>Memory Luminous</td></tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td id="Luminous_box_1">Seamless Random</td>
+   <td><form name="luminous1"><input name="luminous1" type="text" value="#000000"/></form></td>
+   <td rowspan="3">
+    <form name="color">
+     <input type="button" value="Update" onclick="setMemLuminous()"/>
+     <input name="memory" type="text" value="#000000"/>
+     <input name="current" type="text" value="#000000"/>
+    </form>
+   </td>
+  </tr>
+  <tr>
+   <td id="Luminous_box_2">Change Pattern A</td>
+   <td><form name="luminous2"><input name="luminous2" type="text" value="#000000"/></form></td>
+  </tr>
+  <tr>
+   <td id="Luminous_box_3">Change Pattern B</td>
+   <td><form name="luminous3"><input name="luminous3" type="text" value="#000000"/></form></td>
+  </tr>
+ </thead>
+ <tbody>
+ </tbody>
+</table>
+
+<h4>シミュレーション色設定</h4>
+<table>
+ <tbody>
+  <tr>
+   <td>キャラクター</td><td colspan="2">イメージカラー</td>  <td colspan="3">色見本</td>
+  </tr>
+  <tr>
+   <td>（LED設定色）</td><td>日本語</td><td>Colorful Days</td><td>　 公式web 　</td><td>Colorful Days</td><td>　Wikipedia　</td>
+  </tr>
+  <tr>
+   <td style="background-color: #FF0000" onclick="setCurLuminous('FF', '00', '00')">天海春香</td><td>赤</td><td>レッド</td>
+   <td style="background-color: #FF6666" onclick="setCurLuminous('FF', '66', '66')">#FF6666</td>
+   <td style="background-color: #F70F1F" onclick="setCurLuminous('F7', '0F', '1F')">#F70F1F</td>
+   <td style="background-color: #FF0000" onclick="setCurLuminous('FF', '00', '00')">#FF0000</td>
+  </tr>
+  <tr>
+   <td style="background-color: #FF0000" onclick="setCurLuminous('FF', '00', '00')">四条貴音</td><td>臙脂色</td><td>カーマイン</td>
+   <td>-</td>
+   <td style="background-color: #B51D66" onclick="setCurLuminous('B5', '1D', '66')">#B51D66</td>
+   <td style="background-color: #B3424A" onclick="setCurLuminous('B3', '42', '4A')">#B3424A</td>
+  </tr>
+  <tr>
+   <td style="background-color: #FF0000" onclick="setCurLuminous('FF', '00', '00')">日高愛</td><td>ピンク、スプラッシュレッド</td><td>-</td>
+   <td style="background-color: #E85786" onclick="setCurLuminous('E8', '57', '86')">#E85786</td>
+   <td>-</td>
+   <td style="background-color: #FF4224" onclick="setCurLuminous('FF', '42', '24')">#FF4224</td>
+  </tr>
+  <tr>
+   <td style="background-color: #0000FF" onclick="setCurLuminous('00', '00', 'FF')">如月千早</td><td>青、水色</td><td>ブルー</td>
+   <td style="background-color: #66CCFF" onclick="setCurLuminous('66', 'CC', 'FF')">#66CCFF</td>
+   <td style="background-color: #0775C4" onclick="setCurLuminous('07', '75', 'C4')">#0775C4</td>
+   <td style="background-color: #0000FF" onclick="setCurLuminous('00', '00', 'FF')">#0000FF</td>
+  </tr>
+  <tr>
+   <td style="background-color: #0000FF" onclick="setCurLuminous('00', '00', 'FF')">我那覇響</td><td>浅葱色</td><td>ライトブルー</td>
+   <td>-</td>
+   <td style="background-color: #00B1BB" onclick="setCurLuminous('00', 'B1', 'BB')">#00B1BB</td>
+   <td style="background-color: #00A4AC" onclick="setCurLuminous('00', 'A4', 'AC')">#00A4AC</td>
+  </tr>
+  <tr>
+   <td style="background-color: #0000FF" onclick="setCurLuminous('00', '00', 'FF')">水谷絵理</td><td>ブルー、イノセントブルー</td><td>-</td>
+   <td style="background-color: #00ADB9" onclick="setCurLuminous('00', 'AD', 'B9')">#00ADB9</td>
+   <td>-</td>
+   <td style="background-color: #00B1E1" onclick="setCurLuminous('00', 'B1', 'E1')">#00B1E1</td>
+  </tr>
+  <tr>
+   <td style="background-color: #FFFFFF" onclick="setCurLuminous('FF', 'FF', 'FF')">萩原雪歩</td><td>白、薄い青</td><td>ホワイト</td>
+   <td style="background-color: #B0B0FF" onclick="setCurLuminous('B0', 'B0', 'FF')">#B0B0FF</td>
+   <td style="background-color: #AECECB" onclick="setCurLuminous('AE', 'CE', 'CB')">#AECECB</td>
+   <td style="background-color: #FFFFFF" onclick="setCurLuminous('FF', 'FF', 'FF')">#FFFFFF</td>
+  </tr>
+  <tr>
+   <td style="background-color: #FFFF00" onclick="setCurLuminous('FF', 'FF', '00')">双海亜美・真美</td><td>黄色</td><td>イエロー</td>
+   <td style="background-color: #FFFF33" onclick="setCurLuminous('FF', 'FF', '33')">#FFFF33</td>
+   <td style="background-color: #FCD424" onclick="setCurLuminous('FC', 'D4', '24')">#FCD424</td>
+   <td style="background-color: #FFFF00" onclick="setCurLuminous('FF', 'FF', '00')">#FFFF00</td>
+  </tr>
+  <tr>
+   <td style="background-color: #FF9900" onclick="setCurLuminous('FF', '99', '00')">高槻やよい</td><td>オレンジ</td><td>オレンジ</td>
+   <td style="background-color: #FF9944" onclick="setCurLuminous('FF', '99', '44')">#FF9944</td>
+   <td style="background-color: #F29047" onclick="setCurLuminous('F2', '90', '47')">#F29047</td>
+   <td style="background-color: #FFA500" onclick="setCurLuminous('FF', 'A5', '00')">#FFA500</td>
+  </tr>
+  <tr>
+   <td style="background-color: #FF9999" onclick="setCurLuminous('FF', '99', '99')">水瀬伊織</td><td>ピンク</td><td>ピンク</td>
+   <td style="background-color: #FF77AA" onclick="setCurLuminous('FF', '77', 'AA')">#FF77AA</td>
+   <td style="background-color: #FA98BF" onclick="setCurLuminous('FA', '98', 'BF')">#FA98BF</td>
+   <td style="background-color: #FFC0CB" onclick="setCurLuminous('FF', 'C0', 'CB')">#FFC0CB</td>
+  </tr>
+  <tr>
+   <td style="background-color: #990099" onclick="setCurLuminous('99', '00', '99')">三浦あずさ</td><td>紫</td><td>パープル</td>
+   <td style="background-color: #CC66FF" onclick="setCurLuminous('CC', '66', 'FF')">#CC66FF</td>
+   <td style="background-color: #7E51A6" onclick="setCurLuminous('7E', '51', 'A6')">#7E51A6</td>
+   <td style="background-color: #800080" onclick="setCurLuminous('80', '00', '80')">#800080</td>
+  </tr>
+  <tr>
+   <td style="background-color: #990099" onclick="setCurLuminous('99', '00', '99')">菊地真</td><td>黒、灰色</td><td>ブラック</td>
+   <td style="background-color: #909090" onclick="setCurLuminous('90', '90', '90')">#909090</td>
+   <td style="background-color: #464B4F" onclick="setCurLuminous('46', '4B', '4F')">#464B4F</td>
+   <td style="background-color: #000000; color: #FFFFFF" onclick="setCurLuminous('00', '00', '00')">#000000</td>
+  </tr>
+  <tr>
+   <td style="background-color: #00FF00" onclick="setCurLuminous('00', 'FF', '00')">秋月律子</td><td>緑、グリーン</td><td>ノーマルグリーン</td>
+   <td style="background-color: #66FF66" onclick="setCurLuminous('66', 'FF', '66')">#66FF66</td>
+   <td style="background-color: #00A752" onclick="setCurLuminous('07', 'A7', '52')">#00A752</td>
+   <td style="background-color: #008000" onclick="setCurLuminous('00', '80', '00')">#008000</td>
+  </tr>
+  <tr>
+   <td style="background-color: #00FF00" onclick="setCurLuminous('00', 'FF', '00')">星井美希</td><td>若草色、黄緑</td><td>フレッシュグリーン</td>
+   <td>-</td>
+   <td style="background-color: #A1CA62" onclick="setCurLuminous('A1', 'CA', '62')">#A1CA62</td>
+   <td style="background-color: #C3D835" onclick="setCurLuminous('C3', 'D8', '35')">#C3D835</td>
+  </tr>
+  <tr>
+   <td style="background-color: #00FF00" onclick="setCurLuminous('00', 'FF', '00')">音無小鳥</td><td>薄い黄色（ひよこ色）</td><td>-</td>
+   <td>-</td>
+   <td>-</td>
+   <td>-</td>
+  </tr>
+  <tr>
+   <td style="background-color: #00FF00" onclick="setCurLuminous('00', 'FF', '00')">秋月涼</td><td>ミントグリーン、ノイエグリーン</td><td>-</td>
+   <td style="background-color: #B2D468" onclick="setCurLuminous('B2', 'D4', '68')">#B2D468</td>
+   <td>-</td>
+   <td style="background-color: #89C997" onclick="setCurLuminous('89', 'C9', '97')">#89C997</td>
+  </tr>
+ </tbody>
+</table>
+<h4>参考サイト</h4>
+<p>
+<a href="http://imas.maruamyu.net/color.html">アイドルのイメージカラー</a>（<a href="http://imas.maruamyu.net/">アイマスDB</a>）
+</p>
+<p>
+<a href="http://ja.wikipedia.org/wiki/THE_IDOLM@STERの登場人物">Wikipedia "THE IDOLM@STERの登場人物"</a>
+</p>
+<!--#include file="footer.html"-->
+</body>
+</html>

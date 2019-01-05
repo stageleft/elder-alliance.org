@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="../document.css" type="text/css"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" type="text/css" href="../document.css" />
+ <title>たくみメモ - elder-alliance.org</title>
+</head>
+<body>
+<!--#include file="topmenu.html"-->
+<p class="note">
+ <a href="http://www.elder-alliance.org/">elder-alliance.org</a>
+ &nbsp;&gt;&nbsp;
+ たくみメモ
+</p>
+<h1 style="text-align:center">たくみメモ</h1>
+<h2>コンテンツ</h2>
+<ul>
+ <li><a href="#winsoft">Windows用ソフト</a></li>
+</ul>
+<h2 id="winsoft">Windows用ソフト</h2>
+<h3>汎用</h3>
+<ul>
+ <li><a href="http://www.justsystems.com/jp/products/atok_teigaku/">ATOK定額制サービス</a></li>
+ <li><a href="http://www.justsystems.com/jp/products/kaspersky/">Kasperski Internet Securitys</a></li>
+ <li><a href="http://www.dropbox.com/">Dropbox</a></li>
+ <li><a href="http://ja.openoffice.org/">OpenOffice.org</a></li>
+ <li>
+  <a href="http://tortoisesvn.net/">TortoiseSVN</a>
+  <ul>
+   <li><a href="http://winmerge.org/">WinMerge</a></li>
+  </ul>
+ </li>
+ <li><a href="http://www.chitora.jp/lhaz.html">Lhaz</a></li>
+ <li><a href="http://sourceforge.jp/projects/sevenzip/">7-Zip</a></li>
+</ul>
+<h3>テキスト関連</h3>
+<ul>
+ <li>
+  <a href="http://sakura-editor.sourceforge.net/">サクラエディタ</a>
+  <ul>
+   <li><a href="http://sakura.qp.land.to/?Install%2FSakuraDown">SakuraDown</a></li>
+   <li><a href="http://www.kmonos.net/lib/caldix.ja.html">caldix</a></li>
+  </ul>
+ </li>
+ <li>
+  <a href="http://oku.edu.mie-u.ac.jp/~okumura/texwiki/">pLaTeX2e</a>
+  <ul>
+   <li><a href="http://www.geocities.jp/tanaken_1018/index.html">TeX多書体化パッケージ「tasyotai.sty」</a>→「はぢめてのてふ」へ</li>
+  </ul>
+ </li>
+ <li><a href="http://www.adobe.com/jp/products/reader/">Adobe Reader</a></li>
+ <li><a href="http://cygwin.com/">Cygwin</a></li>
+</ul>
+<h3>静止画関連（オンライン）</h3>
+<ul>
+ <li><a href="http://tablet.wacom.co.jp/">WACOM CTE-630 タブレットドライバ</a></li>
+ <li><a href="http://www.systemax.jp/ja/sai/">SAI</a></li>
+ <li><a href="http://www.nchsoftware.com/imageconverter/index.html">Pixillion Image Converter Software</a></li>
+ <li><a href="http://www8.plala.or.jp/kusutaku/iview/">IrfanView32</a></li>
+ <li>
+  <a href="http://www.imagemagick.org/script/index.php">ImageMagick</a>
+  <ul>
+   <li><a href="http://www.nicovideo.jp/watch/sm6868975">自動で差分合成</a>（愛識Ｐ）</li>
+  </ul>
+ </li>
+ <li><a href="http://kuramo.ch/nukimas/">nukIM@S</a>
+  <ul>
+   <li><a href="http://www.nicovideo.jp/watch/sm6934904">ＢＢ素材から自動立ち絵抜き ～雪歩で抜いてみた～</a>（愛識Ｐ）</li>
+  </ul>
+ </li>
+</ul>
+<h3>音楽関連</h3>
+<ul>
+ <li>Vocaloid  Editor</li>
+ <li>Vocaloid2 Editor</li>
+ <li><a href="http://www.mp3tag.de/en/">MP3Tag</a></li>
+ <li><a href="http://www.eonet.ne.jp/~julie/stn/index.html">STN(SetTagName)</a></li>
+ <li><a href="http://audacity.sourceforge.net/?lang=ja">Audacity</a></li>
+ <li><a href="http://www.vector.co.jp/soft/win95/art/se127635.html">歌声りっぷ</a></li>
+</ul>
+<h3>動画関連</h3>
+<ul>
+ <li><a href="http://suigindo.com/">紙芝居クリエーター</a></li>
+  <ul>
+   <li><a href="http://jbbs.livedoor.jp/otaku/10158/">iM@S架空戦記シリーズ板</a></li>
+   <li><a href="http://www.vector.co.jp/soft/data/art/se483608.html">ゲーム背景写真素材集（ファンタジー・ホラー風</a></li>
+  </ul>
+ </li>
+ <li><a href="http://www.geocities.jp/higuchuu4/">MikuMikuDance</a>
+  <ul>
+   <li><a href="http://loda.jp/tomtiakep/">富竹Pモデル（８７６、８０１）</a></li>
+   <li><a href="http://cid-163dd5538038bb10.skydrive.live.com/browse.aspx/.Public/MikuMikuDance">くらうちPモデル（７６５）</a></li>
+  </ul>
+ </li>
+ <li>
+  <a href="http://nive.jp/">NiVE</a>
+  <ul>
+   <li><a href="http://www.nicovideo.jp/watch/sm6934904">ＢＢ素材から自動立ち絵抜き ～雪歩で抜いてみた～</a>（愛識Ｐ）</li>
+   <li><a href="http://www.nicovideo.jp/mylist/17118453">nive関連</a>（愛識Ｐ）</li>
+  </ul>
+ </li>
+ <li><a href="http://spring-fragrance.mints.ne.jp/aviutl/">AviUtl</a>（<a href="http://www.nicovideo.jp/mylist/22276660">動画講座</a>）</li>
+ <li><a href="http://janesoft.net/downloader/">SmileDownloader</a></li>
+ <li><a href="http://eigoukaiki.s101.xrea.com/">GetNicoNicomment</a></li>
+ <li><a href="http://hacriel.blog12.fc2.com/">つんでれんこ（ハクリエル版）</a>（<a href="http://dic.nicovideo.jp/a/%E3%81%A4%E3%82%93%E3%81%A7%E3%82%8C%E3%82%93%E3%81%93">解説</a>）</li>
+</ul>
+<h3>生放送関連</h3>
+<ul>
+ <li><a href="http://nicowiki.com/">ニコニコ動画まとめwiki</a></li>
+ <li><a href="http://freesoftdownload.1-yo.com/capture/debut.html">Debut</a></li>
+ <li><a href="http://mosax.sakura.ne.jp/fswiki.cgi?page=SCFH+DSF">SCFH DSF</a></li>
+ <li><a href="http://amamaman.web.infoseek.co.jp/">アマミキ！</a>（解説：<a href="http://vad.seesaa.net/">水おいしいです</a>）</li>
+</ul>
+<h3>Linux仮想マシン(Windowsベース)</h3>
+<ul>
+ <li><a href="http://www.vmware.com/jp/products/player/">VMware Player</a></li>
+ <li><a href="http://homepage3.nifty.com/takeda-toshiya/">QEMU on Windows</a></li>
+ <li><a href="http://www.debian.or.jp/">Debian Linux</a></li>
+ <li><a href="http://www.winehq.org/">WINE</a></li>
+</ul>
+<h3>HTML/FTP</h3>
+<ul>
+ <li>
+  <a href="http://mozilla.jp/firefox/">Mozilla Firefox</a>
+  <ul>
+   <li><a href="https://addons.mozilla.org/ja/firefox/addon/1935">XHTML ルビサポートプラグイン</a></li>
+   <li><a href="https://addons.mozilla.org/ja/firefox/addon/59">UserAgent Switcher</a></li>
+   <li><a href="http://get.adobe.com/jp/flashplayer/">Adobe Flash Players</a></li>
+   <li>
+    <a href="https://addons.mozilla.org/ja/firefox/addon/748/">Greasemonkey</a>
+    <ul>
+     <li><a href="http://userscripts.org/scripts/show/89252">Twitter add RT button</a></li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li><a href="http://filezilla-project.org/">FileZilla</a></li>
+</ul>
+<h3>Development</h3>
+<ul>
+ <li><a href="http://jude.change-vision.com/jude-web/index.html">JUDE Community</a></li>
+ <li>
+  <a href="http://www.eclipse.org/downloads/">Eclipse</a>
+  <ul>
+   <li><a href="http://www.oracle.com/technetwork/java/archive-139210.html">Java Development Kit(JDK)</a></li>
+   <li><a href="http://developer.android.com/sdk/index.html">Android SDK for JAVA</a>
+       (Setting: <a href="http://sky.geocities.jp/izeefss/develop/android/env_eclipse.html">Android開発環境の構築 Eclipse編</a>)</li>
+  </ul>
+ </li>
+ <li><a href="http://www.microchip.co.jp/">MPLAB</a></li>
+ <li><a href="http://www.suigyodo.com/online/index.htm">回路図エディタBSch3V</a></li>
+ <li><a href="http://www.vector.co.jp/vpack/browse/person/an012256.html">プリント基板エディタ「PCBE」</a></li>
+</ul>
+<h3>静止画関連（オフライン）</h3>
+<ul>
+ <li>プリンタドライバ</li>
+ <li>Adobe Photoshop CS2</li>
+ <li><a href="http://www2b.biglobe.ne.jp/~marume/">名刺を作ろう！</a></li>
+</ul>
+<h3>コミュニケーションツール</h3>
+<ul>
+ <li>
+  <a href="http://limechat.net/">LimeChat</a>
+  <ul>
+   <li><a href="http://w10.oroti.net/~lintmil/atriv/index.php?%BC%AB%BA%EE%A5%BD%A5%D5%A5%C8%2FSW2_DLL%20Dice%20Extender">SW2_DLL Dice Extender</a></li>
+  </ul>
+ </li>
+ <li><a href="http://www.skype.com/intl/ja/welcomeback/">SKYPE</a></li>
+ <li><a href="http://cb-online.dyndns.org/">きゃらばと！オンライン</a></li>
+</ul>
+<h3>その他</h3>
+<ul>
+ <li><a href="http://www.daemon-tools.cc/JPN/home">DAEMON Tools</a></li>
+</ul>
+<h3>セキュリティ対策</h3>
+<ul>
+ <li><a href="http://www.lavasoftusa.com/japanese/software/adaware/">Ad-Aware</a></li>
+</ul>
+<!--#include file="footer.html"-->
+</body>
+</html>

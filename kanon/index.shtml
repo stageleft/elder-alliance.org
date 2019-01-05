@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="../document.css" type="text/css"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" type="text/css" href="../document.css" />
+ <title>奇跡のかけら - elder-alliance.org</title>
+</head>
+<body>
+<!--#include file="topmenu.html"-->
+<p class="note">
+ <a href="http://www.elder-alliance.org/">elder-alliance.org</a>
+ &nbsp;&gt;&nbsp;
+ 奇跡のかけら
+</p>
+<h1 style="text-align:center">奇跡のかけら - Kanon Trading Card Game -</h1>
+<p style="text-indent:0pt; text-align:center">
+夢。<br />
+夢を見ている。<br />
+楽しかった、遠い昔の夢。<br />
+少しだけ便利な未来の夢。<br />
+終わりといわれたゲーム。<br />
+終わらないコミュニティ。<br />
+そして、ボクは……。<br />
+</p>
+<h2>コンテンツ</h2>
+<ul>
+ <li><!--<a href="kanon-erata.html">-->KanonTCG ルールブック<!--</a>--><i>coming soon?</i></li>
+ <li><a href="kanon-erata.shtml">KanonTCG 非公式（実質公式）エラッタ</a><i>10/26, 2005</i></li>
+ <li><a href="ss.shtml">KanonTCG ショートストーリー</a><i>7/28, 2004</i></li>
+ <li><a href="kaorin2002.shtml">かおりん・２０歳のバースデイ・パーティ♪ レポート</a><i>3/12, 2002</i></li>
+</ul>
+<h2>おまけ：Kanonショートストーリー</h2>
+<ul>
+ <li><a href="ss-ayukaori.shtml">月宮あゆと美坂香里</a><i>11/26, 2001</i></li>
+ <li><a href="ss-sayumai.shtml">舞踏会</a><i>10/22, 2001</i></li>
+ <li><a href="ss-kaoribp.shtml">かおりんのバースデイ・パーティ♪</a><i>3/1, 2002</i></li>
+ <li><a href="ss-wazawai.shtml">降りかかる災い</a><i>3/8, 2005</i></li>
+</ul>
+<!--#include file="footer.html"-->
+</body>
+</html>
