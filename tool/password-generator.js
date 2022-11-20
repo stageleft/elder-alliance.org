@@ -13,6 +13,17 @@ const random_max = Uint8Array.BYTES_PER_ELEMENT * 256 - 1;
 const length_max = 65535;
 
 class pwgenerator {
+    constructor(crypto_module) {
+        if (crypto_module === null || crypto_module === undefined) {
+            if (window !== null && window.crypto !== null) {
+                this.cryptomodule = window.crypto;
+            } else {
+                throw 'Crypto module is not defined.';
+            }
+        } else {
+            this.cryptomodule = crypto_module;
+        }
+    }
     validate(input) {
         if (toString.call(input) !== '[object Object]') {
             return false;
@@ -39,7 +50,7 @@ class pwgenerator {
         let seed;
         do {
             // see https://developer.mozilla.org/ja/docs/Web/API/Crypto/getRandomValues
-            seed = window.crypto.getRandomValues(new Uint8Array(1))[0];
+            seed = this.cryptomodule.getRandomValues(new Uint8Array(1))[0];
         } while (seed >= seed_max);
         return seed % ubound;
     }
